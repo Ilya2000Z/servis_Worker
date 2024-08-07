@@ -3,9 +3,9 @@ self.addEventListener('push', event => {
     if (event.data) {
         console.log('Получено push-сообщение:', event.data.text());
         self.registration.showNotification(event.data.text(), {
-            body: 'Это push-уведомление!',
+            body: 'Push',
             // icon: 'icon.png',
-            tag: 'push-notification'
+            tag: Math.random().toString()
         });
     } else {
         console.error('Пустое push-сообщение');
